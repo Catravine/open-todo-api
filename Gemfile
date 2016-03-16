@@ -23,6 +23,7 @@ source 'https://rubygems.org'
  gem 'pry'
  gem 'bcrypt'
  gem 'knock'
+ gem 'active_model_serializers'
 
  group :development, :test do
    gem 'byebug'
