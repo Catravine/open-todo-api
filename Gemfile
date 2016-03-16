@@ -22,6 +22,7 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'pry'
  gem 'bcrypt'
+ gem 'knock'
 
  group :development, :test do
    gem 'byebug'

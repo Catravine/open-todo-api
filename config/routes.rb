@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  mount Knock::Engine => "/knock"
+
 end
