@@ -15,8 +15,6 @@ Rails.application.routes.draw do
     resources :lists, only: [] do
       resources :items
     end
-
-    #resources :items, only: [:index, :destroy]
   end
 
   # Sign-In stuff
