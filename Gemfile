@@ -21,7 +21,8 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  gem 'figaro'
  gem 'pry'
- gem 'bcrypt'
+ # Use ActiveModel has_secure_password
+ gem 'bcrypt', '~> 3.1.7'
  gem 'knock'
  gem 'active_model_serializers'
 

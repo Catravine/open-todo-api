@@ -1,2 +1,16 @@
-<h1>Open ToDo API</h1>
-<p>Its an API... get to API'in!</p>
+<br>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Open ToDo Api</h1>
+      <p>Its an API.. get to API'in!</p>
+    </div>
+    <div class="col-md-4">
+      <% if current_user %>
+        do stuff
+      <% else %>
+        <%= render "users/signup" %>
+      <% end %>
+    </div>
+  </div>
+</div>

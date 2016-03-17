@@ -1,4 +1,7 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
+  include BCrypt
 
   has_many :lists
 
@@ -12,4 +15,5 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false },
             length: { minimum: 3, maximum: 254 }
   has_secure_password
+  
 end
