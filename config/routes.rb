@@ -8,13 +8,14 @@ Rails.application.routes.draw do
   resources :sessions
 
   namespace :api, defaults: { format: :json } do
-    resources :users do
-      resources :lists
+    resources :users, only: [:show, :index] do
+      resources :lists, only: [:create, :index, :show, :update]
     end
 
-    resources :lists, only: [] do
-      resources :items
+    resources :lists, only: [:destroy] do
+      resources :items, only: [:create, :index, :show, :update]
     end
+    resources :items, only: [:destroy]
   end
 
   # Sign-In stuff

@@ -4,4 +4,8 @@ class ListSerializer < ActiveModel::Serializer
   def created_at
     object.created_at.strftime('%B %d, %Y')
   end
+
+  def user
+    object.user.id
+  end
 end
