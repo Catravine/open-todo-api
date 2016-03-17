@@ -11,6 +11,14 @@ RSpec.describe List, type: :model do
     it "should respond to title" do
       expect(my_list).to respond_to(:title)
     end
+
+    it "should respond to permission" do
+      expect(my_list).to respond_to(:permission)
+    end
+
+    it "is open by default" do
+      expect(my_list.permission).to eq("open")
+    end
   end
 
 end

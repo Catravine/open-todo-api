@@ -16,7 +16,7 @@
       <div class="pull-right user-info">
         <div class="pull-right">
           <% if current_user %>
-             <%= current_user.name %> | <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+             <%= current_user.username %> | <%= link_to "Sign Out", session_path(current_user), method: :delete %>
           <% else %>
             <%= render 'sessions/login' %>
           <% end %>
