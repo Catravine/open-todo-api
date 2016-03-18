@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :lists
 
   validates :username, presence: true
+  validates :email, presence: true
+  validates_presence_of :password, :on => :create
 
   has_secure_password
 

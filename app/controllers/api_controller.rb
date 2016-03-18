@@ -2,6 +2,9 @@ class ApiController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
+  before_filter :authenticate
+  #before_action :authenticated?
+
   private
 
   def authenticated?
