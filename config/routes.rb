@@ -7,15 +7,26 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  #namespace :api, defaults: { format: :json } do
+    #resources :users do
+      #resources :lists, only: [:create, :update]
+    #end
+
+    #resources :lists, only: [:destroy, :index, :show] do
+      #resources :items, only: [:create, :update]
+    #end
+    #resources :items, only: [:destroy, :index, :show]
+  #end
+
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:show, :index] do
-      resources :lists, only: [:create, :index, :show, :update]
+    resources :users do
+      resources :lists, only: [:create]
     end
 
-    resources :lists, only: [:destroy] do
-      resources :items, only: [:create, :index, :show, :update]
+    resources :lists, except: [:create] do
+      resources :items, only: [:create]
     end
-    resources :items, only: [:destroy]
+    resources :items, except: [:create]
   end
 
   # Sign-In stuff

@@ -8,4 +8,5 @@ class ListSerializer < ActiveModel::Serializer
   def user
     object.user.id
   end
+
 end

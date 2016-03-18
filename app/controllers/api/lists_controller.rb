@@ -32,12 +32,11 @@ class Api::ListsController < ApiController
   end
 
   def destroy
-    begin
-      list = List.find(params[:id])
-      list.destroy
-      render json: {}, :status => :no_content
-    rescue ActiveRecord::RecordNotFound
-      render :json => {}, :status =>not_found
+    list = List.find(params[:id])
+    if list && list.destroy
+      render json: {}, status: :no_content
+    else
+      render json: {}, status: :not_found
     end
   end
 
