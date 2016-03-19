@@ -6,7 +6,7 @@ class ListSerializer < ActiveModel::Serializer
   end
 
   def user
-    object.user.id
+    object.user
   end
 
 end
